@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    tools:context="com.deepak.mydevelopment.NavigationDrawerFragment"
+    android:orientation="vertical">
+
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="120dp"
+           android:src="@drawable/ic_launcher_background"/>
+
+    <include
+        layout="@layout/recycler_view_layout"/>
+
+</LinearLayout>
