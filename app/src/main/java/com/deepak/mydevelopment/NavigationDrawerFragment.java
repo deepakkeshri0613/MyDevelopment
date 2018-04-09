@@ -1,6 +1,7 @@
 package com.deepak.mydevelopment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -27,7 +28,7 @@ import adapters.NavigationDrawerAdapter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavigationDrawerFragment extends Fragment implements NavigationDrawerAdapter.ClickListener{
+public class NavigationDrawerFragment extends Fragment{
 
     private View containerView;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -54,15 +55,12 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         recyclerView=view.findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-         DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(recyclerView.getContext(),1);
-
+        DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(recyclerView.getContext(),1);
         recyclerView.addItemDecoration(dividerItemDecoration);
     }
 
-    public void setUp( DrawerLayout drawerLayout,Toolbar toolbar,List<String> data) {
-        NavigationDrawerAdapter adapter=new NavigationDrawerAdapter(getContext(),data);
+    public void setUp( DrawerLayout drawerLayout,Toolbar toolbar,NavigationDrawerAdapter adapter) {
         recyclerView.setAdapter(adapter);
-        adapter.setOnClickListener(this);
         mDrawerLayout=drawerLayout;
         mDrawerToggle=new ActionBarDrawerToggle(getActivity(),drawerLayout,toolbar,R.string.drawer_open
         ,R.string.drawer_close)
@@ -87,23 +85,10 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         return mDrawerLayout;
     }
 
-    @Override
-    public void onMenuItemClick(int position) {
-        getmDrawerLayout().closeDrawer(Gravity.START);
-
-        Toast.makeText(getContext(),""+position,Toast.LENGTH_SHORT).show();
-
-
-    }
 
 
 
 
 
-/*
-    @Override
-    public void itemClick(View view, int position) {
-        Toast.makeText(getActivity(),"cllose",Toast.LENGTH_SHORT).show();
-        getmDrawerLayout().closeDrawer(Gravity.END);
-    }*/
+
 }

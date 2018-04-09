@@ -10,7 +10,6 @@
     android:id="@+id/menu_item_name"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Deepak"
     android:layout_marginLeft="25dp"
     android:textStyle="italic|bold"
     />

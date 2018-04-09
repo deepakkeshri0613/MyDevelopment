@@ -2,14 +2,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eee"
+    android:background="#fff"
     tools:context="com.deepak.mydevelopment.NavigationDrawerFragment"
     android:orientation="vertical">
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="120dp"
-           android:src="@drawable/ic_launcher_background"/>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:background="@color/colorPrimary"
+          android:gravity="bottom|center"
+          >
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Hello Deepak"
+              android:layout_marginBottom="12dp"
+              android:textColor="@android:color/white"
+              android:textStyle="italic|bold"
+              android:textSize="25sp"
+              />
+      </LinearLayout>
 
     <include
         layout="@layout/recycler_view_layout"/>

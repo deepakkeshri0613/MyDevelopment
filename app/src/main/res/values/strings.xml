@@ -2,4 +2,14 @@
     <string name="app_name">MyDevelopment</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
+    <string-array name="menu_name">
+        <item>Intent</item>
+        <item>Style</item>
+        <item>RecyclerView</item>
+        <item>ViewPager</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
