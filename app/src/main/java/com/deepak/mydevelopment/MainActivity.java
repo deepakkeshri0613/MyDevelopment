@@ -9,9 +9,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.transition.TransitionManager;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.deepak.mydevelopment.intent.IntentFragment;
 
 import adapters.NavigationDrawerAdapter;
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
     void showFragment(Fragment fragment)
     {
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
         fragmentTransaction.replace(R.id.fragment_container,fragment).commit();
     }
     {
