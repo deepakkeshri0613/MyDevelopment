@@ -1,5 +1,6 @@
 package com.deepak.mydevelopment;
 
+import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -9,11 +10,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 
 import com.deepak.mydevelopment.intent.IntentFragment;
+import com.deepak.mydevelopment.permission.PermissionFragment;
+import com.deepak.mydevelopment.recyclerview.RecyclerViewFragment;
 
 import adapters.NavigationDrawerAdapter;
 
 public class MainActivity extends AppCompatActivity implements NavigationDrawerAdapter.ClickListener{
 
+    private int position=0;
     Toolbar toolbar;
     NavigationDrawerFragment drawerFragment;
     ActivityFetch activityFetch;
@@ -39,8 +43,23 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
 
         switch (position)
         {
-            case 0:showFragment(IntentFragment.createFragment());
+            case 0:if(this.position!=0)
+                   {
+                    showFragment(MainFragment.createFragment());
+                       this.position=position;
+                   }
+
                    break;
+            case 1:showFragment(IntentFragment.createFragment());
+                   this.position=position;
+                   break;
+            case 2:showFragment(new PermissionFragment());
+                this.position=position;
+                break;
+            case 3:showFragment(new RecyclerViewFragment());
+                this.position=position;
+                break;
+
         }
     }
 
@@ -50,8 +69,18 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left);
         fragmentTransaction.replace(R.id.fragment_container,fragment).commit();
-    }
-    {
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if(position!=0)
+        {
+            showFragment(MainFragment.createFragment());
+            position=0;
+        }
+        else
+        super.onBackPressed();
     }
 }
