@@ -8,6 +8,8 @@
         <item>Intent</item>
         <item>Permission</item>
         <item>RecyclerView</item>
+        <item>BroadCastReciver</item>
+        <item>Service</item>
         <item>ViewPager</item>
         <item>Style</item>
     </string-array>

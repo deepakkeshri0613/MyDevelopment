@@ -9,15 +9,19 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 
+import com.deepak.mydevelopment.broadcastreciver.BroadCastFragment;
 import com.deepak.mydevelopment.intent.IntentFragment;
 import com.deepak.mydevelopment.permission.PermissionFragment;
 import com.deepak.mydevelopment.recyclerview.RecyclerViewFragment;
+import com.deepak.mydevelopment.service.ServiceFragment;
+import com.deepak.mydevelopment.style.styleFragment;
+import com.deepak.mydevelopment.viewpager.ViewPagerFragment;
 
 import adapters.NavigationDrawerAdapter;
 
 public class MainActivity extends AppCompatActivity implements NavigationDrawerAdapter.ClickListener{
 
-    private int position=0;
+    private int position=0,previousFragmentPosition=0;
     Toolbar toolbar;
     NavigationDrawerFragment drawerFragment;
     ActivityFetch activityFetch;
@@ -47,17 +51,58 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
                    {
                     showFragment(MainFragment.createFragment());
                        this.position=position;
+                       this.previousFragmentPosition=position;
                    }
 
                    break;
-            case 1:showFragment(IntentFragment.createFragment());
-                   this.position=position;
+            case 1:if(position!=previousFragmentPosition)
+                     {
+                     showFragment(IntentFragment.createFragment());
+                     this.position=position;
+                         this.previousFragmentPosition=position;
+                     }
                    break;
-            case 2:showFragment(new PermissionFragment());
-                this.position=position;
+            case 2:if(position!=previousFragmentPosition) {
+                showFragment(new PermissionFragment());
+                this.position = position;
+                this.previousFragmentPosition=position;}
                 break;
-            case 3:showFragment(new RecyclerViewFragment());
+
+            case 3:if(position!=previousFragmentPosition) {
+                showFragment(new RecyclerViewFragment());
                 this.position=position;
+                this.previousFragmentPosition=position;
+            }
+                break;
+            case 4:if(position!=previousFragmentPosition) {
+                showFragment(BroadCastFragment.createFragment());
+                this.position=position;
+                this.previousFragmentPosition=position;
+            }
+                break;
+            case 5:if(position!=previousFragmentPosition)
+            {
+
+                showFragment(ServiceFragment.createFragment());
+                this.position=position;
+                this.previousFragmentPosition=position;
+            }
+                break;
+            case 6:if(position!=previousFragmentPosition)
+            {
+
+                showFragment(new ViewPagerFragment());
+                this.position=position;
+                this.previousFragmentPosition=position;
+            }
+                break;
+            case 7:if(position!=previousFragmentPosition)
+            {
+
+                showFragment(new styleFragment());
+                this.position=position;
+                this.previousFragmentPosition=position;
+            }
                 break;
 
         }

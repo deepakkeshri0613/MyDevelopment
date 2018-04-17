@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context="com.deepak.mydevelopment.service.ServiceFragment">
+
+   <Button
+       android:id="@+id/start_service_but"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Start Service"/>
+    <Button
+        android:id="@+id/stop_service_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Service"/>
+
+    <Button
+        android:id="@+id/start_intent_service_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Intent Service"/>
+    <Button
+        android:id="@+id/stop_intent_service_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Intent Service"/>
+
+    <Button
+        android:id="@+id/start_bound_service_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Bound Service"/>
+    <Button
+        android:id="@+id/stop_bound_service_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Bound Service"/>
+
+</LinearLayout>
