@@ -12,6 +12,8 @@
         <item>Service</item>
         <item>ViewPager</item>
         <item>Style</item>
+        <item>Alert Dialog</item>
+        <item>Progress Dialog</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

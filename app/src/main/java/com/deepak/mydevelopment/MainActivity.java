@@ -1,6 +1,4 @@
 package com.deepak.mydevelopment;
-
-import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -9,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 
+import com.deepak.mydevelopment.AlertDialog.AlertDialogFragment;
 import com.deepak.mydevelopment.broadcastreciver.BroadCastFragment;
 import com.deepak.mydevelopment.intent.IntentFragment;
 import com.deepak.mydevelopment.permission.PermissionFragment;
@@ -100,6 +99,22 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
             {
 
                 showFragment(new styleFragment());
+                this.position=position;
+                this.previousFragmentPosition=position;
+            }
+                break;
+            case 8:if(position!=previousFragmentPosition)
+            {
+
+                showFragment(new AlertDialogFragment());
+                this.position=position;
+                this.previousFragmentPosition=position;
+            }
+                break;
+            case 9:if(position!=previousFragmentPosition)
+            {
+
+                showFragment(new ProgressDialogFragment());
                 this.position=position;
                 this.previousFragmentPosition=position;
             }
