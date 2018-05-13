@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left,R.anim.exit_right_to_left);
         fragmentTransaction.replace(R.id.fragment_container,fragment).commit();
-
     }
 
 
