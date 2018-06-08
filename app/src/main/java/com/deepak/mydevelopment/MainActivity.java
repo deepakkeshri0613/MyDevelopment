@@ -21,6 +21,7 @@ import adapters.NavigationDrawerAdapter;
 public class MainActivity extends AppCompatActivity implements NavigationDrawerAdapter.ClickListener{
 
     private int position=0,previousFragmentPosition=0;
+
     Toolbar toolbar;
     NavigationDrawerFragment drawerFragment;
     ActivityFetch activityFetch;
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
         {
             showFragment(MainFragment.createFragment());
             position=0;
+            previousFragmentPosition=0;
         }
         else
         super.onBackPressed();

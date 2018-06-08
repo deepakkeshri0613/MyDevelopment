@@ -38,6 +38,7 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put(DbContract.INCOMING_NUMBER,number);
         database.insert(DbContract.TABLE_NAME,null,contentValues);
     }
+
     public Cursor readNumber(SQLiteDatabase database)
     {
         String[] projection={"id",DbContract.INCOMING_NUMBER};

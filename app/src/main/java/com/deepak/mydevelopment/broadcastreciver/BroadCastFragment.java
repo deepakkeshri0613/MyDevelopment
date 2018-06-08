@@ -67,7 +67,7 @@ public class BroadCastFragment extends Fragment {
     {
         data.clear();
         DbHelper dbHelper=new DbHelper(getActivity());
-        SQLiteDatabase database=dbHelper.getWritableDatabase();
+        SQLiteDatabase database=dbHelper.getReadableDatabase();
         Cursor cursor=dbHelper.readNumber(database);
         if(cursor.getCount()>0)
         {
