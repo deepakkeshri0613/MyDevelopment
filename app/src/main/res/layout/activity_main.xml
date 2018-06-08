@@ -8,11 +8,10 @@
     android:layout_height="match_parent"
     tools:context="com.deepak.mydevelopment.MainActivity"
     >
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
-        android:orientation="vertical"
         >
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -30,8 +29,10 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        <include layout="@layout/bottom_sheet"/>
+    </android.support.design.widget.CoordinatorLayout>
     <fragment
         android:id="@+id/navigation_drawer_fragment"
         android:layout_width="280dp"

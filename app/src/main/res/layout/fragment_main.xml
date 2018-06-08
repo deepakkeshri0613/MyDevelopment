@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Goto the Navigation Drwer to Select chepter" />
+        android:text="Goto the Navigation Drwer to Select chapter" />
     <Button
         android:id="@+id/fragment_button"
         android:layout_width="wrap_content"

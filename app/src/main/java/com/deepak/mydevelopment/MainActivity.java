@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.deepak.mydevelopment.AlertDialog.AlertDialogFragment;
 import com.deepak.mydevelopment.broadcastreciver.BroadCastFragment;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
     NavigationDrawerFragment drawerFragment;
     ActivityFetch activityFetch;
     NavigationDrawerAdapter navigationDrawerAdapter;
+    LinearLayout bottomSheet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
         navigationDrawerAdapter.setOnClickListener(this);
         drawerFragment=(NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_fragment);
         drawerFragment.setUp((DrawerLayout) findViewById(R.id.drawer_layout),toolbar,navigationDrawerAdapter);
+
+
+        bottomSheet=findViewById(R.id.bottom_sheet);
+
     }
 
     @Override
@@ -49,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
         {
             case 0:if(this.position!=0)
                    {
+                       bottomSheet.setVisibility(View.VISIBLE);
                     showFragment(MainFragment.createFragment());
                        this.position=position;
                        this.previousFragmentPosition=position;
@@ -57,24 +65,28 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
                    break;
             case 1:if(position!=previousFragmentPosition)
                      {
+                         bottomSheet.setVisibility(View.GONE);
                      showFragment(IntentFragment.createFragment());
                      this.position=position;
                          this.previousFragmentPosition=position;
                      }
                    break;
             case 2:if(position!=previousFragmentPosition) {
+                bottomSheet.setVisibility(View.GONE);
                 showFragment(new PermissionFragment());
                 this.position = position;
                 this.previousFragmentPosition=position;}
                 break;
 
             case 3:if(position!=previousFragmentPosition) {
+                bottomSheet.setVisibility(View.GONE);
                 showFragment(new RecyclerViewFragment());
                 this.position=position;
                 this.previousFragmentPosition=position;
             }
                 break;
             case 4:if(position!=previousFragmentPosition) {
+                bottomSheet.setVisibility(View.GONE);
                 showFragment(BroadCastFragment.createFragment());
                 this.position=position;
                 this.previousFragmentPosition=position;
@@ -82,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
                 break;
             case 5:if(position!=previousFragmentPosition)
             {
+                bottomSheet.setVisibility(View.GONE);
 
                 showFragment(ServiceFragment.createFragment());
                 this.position=position;
@@ -91,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
             case 6:if(position!=previousFragmentPosition)
             {
 
+                bottomSheet.setVisibility(View.GONE);
                 showFragment(new ViewPagerFragment());
                 this.position=position;
                 this.previousFragmentPosition=position;
@@ -99,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
             case 7:if(position!=previousFragmentPosition)
             {
 
+                bottomSheet.setVisibility(View.GONE);
                 showFragment(new styleFragment());
                 this.position=position;
                 this.previousFragmentPosition=position;
@@ -106,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
                 break;
             case 8:if(position!=previousFragmentPosition)
             {
-
+                bottomSheet.setVisibility(View.GONE);
                 showFragment(new AlertDialogFragment());
                 this.position=position;
                 this.previousFragmentPosition=position;
@@ -114,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
                 break;
             case 9:if(position!=previousFragmentPosition)
             {
-
+                bottomSheet.setVisibility(View.GONE);
                 showFragment(new ProgressDialogFragment());
                 this.position=position;
                 this.previousFragmentPosition=position;
@@ -137,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerA
     public void onBackPressed() {
         if(position!=0)
         {
+            bottomSheet.setVisibility(View.VISIBLE);
             showFragment(MainFragment.createFragment());
             position=0;
             previousFragmentPosition=0;

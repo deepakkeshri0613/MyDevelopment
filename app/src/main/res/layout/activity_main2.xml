@@ -45,7 +45,5 @@
         app:layout_anchorGravity="bottom|right|end"
         app:layout_behavior="behaviour.TranslateHideFab"
         />
-
-
     <include layout="@layout/fab_menu"/>
 </android.support.design.widget.CoordinatorLayout>
